@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  public mapStylerOptions = [
+    {
+      'featureType': 'poi',
+      'stylers': [{'visibility': 'off'}]
+    },
+    {
+      'featureType': 'transit',
+      'stylers': [{'visibility': 'off'}]
+    }
+  ];
 }

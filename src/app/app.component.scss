@@ -1,0 +1,16 @@
+.top-toolbar-container {
+  .top-toolbar-wrapper {
+    .top-toolbar-spacer {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+.top-toolbar-container, .top-toolbar-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.home-main-map {
+  height: calc(100vh - 56px);
+}
