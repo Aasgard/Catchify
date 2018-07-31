@@ -1,21 +1,31 @@
 <mat-toolbar color="primary" class="top-toolbar-container">
-  <mat-toolbar-row class="top-toolbar-wrapper">
-    <button mat-icon-button>
-      <mat-icon>menu</mat-icon>
-    </button>
+    <mat-toolbar-row class="top-toolbar-wrapper">
+        <button mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
 
-    <span class="top-toolbar-spacer"></span>
-    <span>Catchify</span>
-    <span class="top-toolbar-spacer"></span>
+        <span class="top-toolbar-spacer"></span>
+        <span>Catchify</span>
+        <span class="top-toolbar-spacer"></span>
 
-    <button mat-icon-button>
-      <mat-icon>account_circle</mat-icon>
-    </button>
-  </mat-toolbar-row>
+        <button mat-icon-button *ngIf="isMapViewActivated" (click)="isMapViewActivated = !isMapViewActivated">
+            <mat-icon>list_alt</mat-icon>
+        </button>
+        <button mat-icon-button *ngIf="!isMapViewActivated" (click)="isMapViewActivated = !isMapViewActivated">
+            <mat-icon>map</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+        </button>
+
+    </mat-toolbar-row>
 </mat-toolbar>
 
+<p *ngIf="!isMapViewActivated">Liste des prises et des coins</p>
+
 <agm-map
-  [latitude]="51.678418"
-  [longitude]="7.809007"
-  [styles]="mapStylerOptions"
-  class="home-main-map"></agm-map>
+        *ngIf="isMapViewActivated"
+        [latitude]="51.678418"
+        [longitude]="7.809007"
+        [styles]="mapStylerOptions"
+        class="home-main-map"></agm-map>

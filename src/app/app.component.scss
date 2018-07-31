@@ -1,4 +1,7 @@
 .top-toolbar-container {
+  min-height: 7vh;
+  height: 7vh;
+  max-height: 7vh;
   .top-toolbar-wrapper {
     .top-toolbar-spacer {
       flex: 1 1 auto;
@@ -12,5 +15,7 @@
 }
 
 .home-main-map {
-  height: calc(100vh - 56px);
+  min-height: 93vh;
+  height: 93vh;
+  max-height: 93vh;
 }
