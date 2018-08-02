@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "catchify-211809"
+    "default": "catchify-211809",
+    "catchify": "catchify-211809"
   }
 }
