@@ -14,13 +14,19 @@
         <button mat-icon-button *ngIf="!isMapViewActivated" (click)="isMapViewActivated = !isMapViewActivated">
             <mat-icon>map</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="onLoginButtonClicked()" *ngIf="!isUserLoggedIn">
             <mat-icon>account_circle</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onLogoutButtonClicked()" *ngIf="isUserLoggedIn">
+            <mat-icon>power_settings_new</mat-icon>
         </button>
 
     </mat-toolbar-row>
 </mat-toolbar>
 
+<div *ngIf="!isMapViewActivated">
+    <img src="{{ profilePictureTest }}" alt="Test photo" *ngIf="isUserLoggedIn">
+</div>
 <p *ngIf="!isMapViewActivated">Liste des prises et des coins</p>
 
 <agm-map

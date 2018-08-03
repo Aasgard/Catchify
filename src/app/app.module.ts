@@ -13,6 +13,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {AgmCoreModule} from '@agm/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AngularFireModule} from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
     declarations: [
@@ -22,9 +24,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         BrowserModule,
         MatToolbarModule,
         BrowserAnimationsModule,
+        AngularFireAuthModule,
         MatIconModule,
         MatSnackBarModule,
         MatButtonModule,
+        AngularFireModule.initializeApp(environment.firebase),
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyBI1Xx95rP3oYrJKSe-LRZzqq6bTME_1Yw'
         }),
